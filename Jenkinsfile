@@ -6,7 +6,9 @@ node {
     app = docker.build("andychoi20170803/testrepo")
   }
   stage('Test') {
-    sh 'sh ./test.sh'
+    docker.image("andychoi20170803/testrepo").withRun("-it -p 8000:8000") {c ->
+      sh 'curl http://localhost:8000'
+    }
   }
   stage('Push') {
     docker.withRegistry('https://registry.hub.docker.com','docker-hub-credentials') {
