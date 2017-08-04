@@ -6,7 +6,7 @@ node {
     app = docker.build("andychoi20170803/testrepo")
   }
   stage('Test') {
-    docker.image("andychoi20170803/testrepo").withRun("-it -p 8000:8001") {c ->
+    docker.image("andychoi20170803/testrepo").withRun("-it -p 8001:8000") {c ->
       sh 'curl -f http://127.0.0.1:8001'
     }
   }
