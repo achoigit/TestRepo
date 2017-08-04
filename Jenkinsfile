@@ -3,7 +3,7 @@ node {
     checkout scm    
   }
   stage('Build') {
-    app = docker.build("testrepo/hellonode")
+    app = docker.build("andychoi20170803/testrepo")
   }
   stage('Test') {
     sh 'sh ./test.sh'
