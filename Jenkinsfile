@@ -3,6 +3,6 @@ node {
     checkout scm    
   }
   stage('Build') {
-    app = docker.build("TestRepo/hellonode")
+    app = docker.build("testrepo/hellonode")
   }
 }
