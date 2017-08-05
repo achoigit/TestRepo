@@ -7,7 +7,7 @@ node {
   }
   stage('Test') {
     docker.image("andychoi20170803/testrepo").withRun("-it -p 8001:8000") {c ->
-      sh 'curl -f http://127.0.0.1:8001'
+      sh 'sleep 5;curl -f http://127.0.0.1:8001'
     }
   }
   stage('Push') {
